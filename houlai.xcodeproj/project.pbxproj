@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28C75737CBE736AE50778D76 /* Pods_houlai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F19B42CE81C62F2D7F3002A /* Pods_houlai.framework */; };
+		8C074F2D20C28BD100C4A14C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F2C20C28BD100C4A14C /* ListViewController.swift */; };
+		8C074F2F20C293F300C4A14C /* HLRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F2E20C293F300C4A14C /* HLRootViewController.swift */; };
+		8C074F3C20C2F1B800C4A14C /* QHTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3120C2F1B700C4A14C /* QHTabBarView.swift */; };
+		8C074F3D20C2F1B800C4A14C /* QHPresentPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3220C2F1B700C4A14C /* QHPresentPopTransition.swift */; };
+		8C074F3E20C2F1B800C4A14C /* QHPushAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3320C2F1B700C4A14C /* QHPushAnimationTransition.swift */; };
+		8C074F3F20C2F1B800C4A14C /* QHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3420C2F1B700C4A14C /* QHNavigationController.swift */; };
+		8C074F4020C2F1B800C4A14C /* QHNavigationControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3520C2F1B700C4A14C /* QHNavigationControllerTransition.swift */; };
+		8C074F4120C2F1B800C4A14C /* QHPresentPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3620C2F1B700C4A14C /* QHPresentPushTransition.swift */; };
+		8C074F4220C2F1B800C4A14C /* QHNavigationOtherTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3720C2F1B700C4A14C /* QHNavigationOtherTransition.swift */; };
+		8C074F4320C2F1B800C4A14C /* QHBaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3820C2F1B700C4A14C /* QHBaseTransition.swift */; };
+		8C074F4420C2F1B800C4A14C /* QHNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F3920C2F1B700C4A14C /* QHNavigationBar.xib */; };
+		8C074F4520C2F1B800C4A14C /* QHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3A20C2F1B800C4A14C /* QHTabBarController.swift */; };
+		8C074F4620C2F1B800C4A14C /* QHNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3B20C2F1B800C4A14C /* QHNavigationBar.swift */; };
+		8C074F4A20C3FE6F00C4A14C /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F4920C3FE6F00C4A14C /* TimelineView.swift */; };
+		8C074F4F20C4008000C4A14C /* fireworks.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F4C20C4008000C4A14C /* fireworks.jpeg */; };
+		8C074F5020C4008000C4A14C /* april.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F4D20C4008000C4A14C /* april.jpeg */; };
+		8C074F5120C4008000C4A14C /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F4E20C4008000C4A14C /* heart.png */; };
+		8C074F5520C4064B00C4A14C /* YPDouYinLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F5320C4064B00C4A14C /* YPDouYinLikeAnimation.m */; };
+		8C074F5B20C40B0400C4A14C /* yp_video_like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F5920C40B0400C4A14C /* yp_video_like@3x.png */; };
+		8C074F5C20C40B0400C4A14C /* yp_video_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F5A20C40B0400C4A14C /* yp_video_like@2x.png */; };
+		8C074F5E20C410A100C4A14C /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F5D20C410A100C4A14C /* back.jpg */; };
+		8C074F6120C4128900C4A14C /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F5F20C4128900C4A14C /* red.png */; };
+		8C074F6220C4128900C4A14C /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F6020C4128900C4A14C /* white.png */; };
+		8C074F6420C42CB200C4A14C /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F6320C42CB200C4A14C /* comment.png */; };
+		8C074F6E20C4320C00C4A14C /* MYColorBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F6620C4320C00C4A14C /* MYColorBackView.m */; };
+		8C074F6F20C4320C00C4A14C /* MYPresentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F6820C4320C00C4A14C /* MYPresentedController.m */; };
+		8C074F7020C4320C00C4A14C /* MYPresentAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F6920C4320C00C4A14C /* MYPresentAnimationManager.m */; };
+		8C074F7120C4320C00C4A14C /* MYPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F6D20C4320C00C4A14C /* MYPresentationController.m */; };
+		8C074F7620C437EE00C4A14C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F7420C437EE00C4A14C /* MenuViewController.swift */; };
+		8C074F7720C437EE00C4A14C /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F7520C437EE00C4A14C /* MenuViewController.xib */; };
+		8C074F7A20C43D4000C4A14C /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F7820C43D4000C4A14C /* CommentTableViewCell.swift */; };
+		8C074F7B20C43D4000C4A14C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F7920C43D4000C4A14C /* CommentTableViewCell.xib */; };
+		8C0E654020A17AB300343FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E653F20A17AB300343FE8 /* AppDelegate.swift */; };
+		8C0E654220A17AB400343FE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E654120A17AB400343FE8 /* ViewController.swift */; };
+		8C0E654520A17AB400343FE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654320A17AB400343FE8 /* Main.storyboard */; };
+		8C0E654720A17AB500343FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654620A17AB500343FE8 /* Assets.xcassets */; };
+		8C0E654A20A17AB500343FE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654820A17AB500343FE8 /* LaunchScreen.storyboard */; };
+		8C0E655320A17E3800343FE8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E655220A17E3800343FE8 /* MainViewController.swift */; };
+		8CED4F0B20C2725E00E4DDA8 /* HLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7F19B42CE81C62F2D7F3002A /* Pods_houlai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houlai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C074F2C20C28BD100C4A14C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8C074F2E20C293F300C4A14C /* HLRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLRootViewController.swift; sourceTree = "<group>"; };
+		8C074F3120C2F1B700C4A14C /* QHTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHTabBarView.swift; sourceTree = "<group>"; };
+		8C074F3220C2F1B700C4A14C /* QHPresentPopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHPresentPopTransition.swift; sourceTree = "<group>"; };
+		8C074F3320C2F1B700C4A14C /* QHPushAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHPushAnimationTransition.swift; sourceTree = "<group>"; };
+		8C074F3420C2F1B700C4A14C /* QHNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHNavigationController.swift; sourceTree = "<group>"; };
+		8C074F3520C2F1B700C4A14C /* QHNavigationControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHNavigationControllerTransition.swift; sourceTree = "<group>"; };
+		8C074F3620C2F1B700C4A14C /* QHPresentPushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHPresentPushTransition.swift; sourceTree = "<group>"; };
+		8C074F3720C2F1B700C4A14C /* QHNavigationOtherTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHNavigationOtherTransition.swift; sourceTree = "<group>"; };
+		8C074F3820C2F1B700C4A14C /* QHBaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHBaseTransition.swift; sourceTree = "<group>"; };
+		8C074F3920C2F1B700C4A14C /* QHNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
+		8C074F3A20C2F1B800C4A14C /* QHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHTabBarController.swift; sourceTree = "<group>"; };
+		8C074F3B20C2F1B800C4A14C /* QHNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
+		8C074F4920C3FE6F00C4A14C /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		8C074F4C20C4008000C4A14C /* fireworks.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fireworks.jpeg; path = houlai/fireworks.jpeg; sourceTree = SOURCE_ROOT; };
+		8C074F4D20C4008000C4A14C /* april.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = april.jpeg; path = houlai/april.jpeg; sourceTree = SOURCE_ROOT; };
+		8C074F4E20C4008000C4A14C /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = houlai/heart.png; sourceTree = SOURCE_ROOT; };
+		8C074F5220C4064A00C4A14C /* houlai-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "houlai-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C074F5320C4064B00C4A14C /* YPDouYinLikeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPDouYinLikeAnimation.m; sourceTree = "<group>"; };
+		8C074F5420C4064B00C4A14C /* YPDouYinLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPDouYinLikeAnimation.h; sourceTree = "<group>"; };
+		8C074F5920C40B0400C4A14C /* yp_video_like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yp_video_like@3x.png"; sourceTree = "<group>"; };
+		8C074F5A20C40B0400C4A14C /* yp_video_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yp_video_like@2x.png"; sourceTree = "<group>"; };
+		8C074F5D20C410A100C4A14C /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
+		8C074F5F20C4128900C4A14C /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		8C074F6020C4128900C4A14C /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		8C074F6320C42CB200C4A14C /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		8C074F6620C4320C00C4A14C /* MYColorBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYColorBackView.m; sourceTree = "<group>"; };
+		8C074F6720C4320C00C4A14C /* MYPresentAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYPresentAnimationManager.h; sourceTree = "<group>"; };
+		8C074F6820C4320C00C4A14C /* MYPresentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYPresentedController.m; sourceTree = "<group>"; };
+		8C074F6920C4320C00C4A14C /* MYPresentAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYPresentAnimationManager.m; sourceTree = "<group>"; };
+		8C074F6A20C4320C00C4A14C /* MYPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYPresentationController.h; sourceTree = "<group>"; };
+		8C074F6B20C4320C00C4A14C /* MYColorBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYColorBackView.h; sourceTree = "<group>"; };
+		8C074F6C20C4320C00C4A14C /* MYPresentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYPresentedController.h; sourceTree = "<group>"; };
+		8C074F6D20C4320C00C4A14C /* MYPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYPresentationController.m; sourceTree = "<group>"; };
+		8C074F7420C437EE00C4A14C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8C074F7520C437EE00C4A14C /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8C074F7820C43D4000C4A14C /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		8C074F7920C43D4000C4A14C /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		8C0E653C20A17AB300343FE8 /* houlai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houlai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0E653F20A17AB300343FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C0E654120A17AB400343FE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C0E654420A17AB400343FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C0E654620A17AB500343FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C0E654920A17AB500343FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C0E654B20A17AB500343FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C0E655220A17E3800343FE8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseViewController.swift; sourceTree = "<group>"; };
+		BF621688C23BFE64572417C9 /* Pods-houlai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houlai.release.xcconfig"; path = "Pods/Target Support Files/Pods-houlai/Pods-houlai.release.xcconfig"; sourceTree = "<group>"; };
+		CE514372DF284D37E34DBEED /* Pods-houlai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houlai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houlai/Pods-houlai.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C0E653920A17AB300343FE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28C75737CBE736AE50778D76 /* Pods_houlai.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52FB41D0E1C5CE6D1181417B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE514372DF284D37E34DBEED /* Pods-houlai.debug.xcconfig */,
+				BF621688C23BFE64572417C9 /* Pods-houlai.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		722D0A965135678E9B24C28A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F19B42CE81C62F2D7F3002A /* Pods_houlai.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C074F3020C2F15100C4A14C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8C074F6520C4318400C4A14C /* DropMenu */,
+				8C074F5420C4064B00C4A14C /* YPDouYinLikeAnimation.h */,
+				8C074F5320C4064B00C4A14C /* YPDouYinLikeAnimation.m */,
+				8C074F4920C3FE6F00C4A14C /* TimelineView.swift */,
+				8C074F3820C2F1B700C4A14C /* QHBaseTransition.swift */,
+				8C074F3B20C2F1B800C4A14C /* QHNavigationBar.swift */,
+				8C074F3920C2F1B700C4A14C /* QHNavigationBar.xib */,
+				8C074F3420C2F1B700C4A14C /* QHNavigationController.swift */,
+				8C074F3520C2F1B700C4A14C /* QHNavigationControllerTransition.swift */,
+				8C074F3720C2F1B700C4A14C /* QHNavigationOtherTransition.swift */,
+				8C074F3220C2F1B700C4A14C /* QHPresentPopTransition.swift */,
+				8C074F3620C2F1B700C4A14C /* QHPresentPushTransition.swift */,
+				8C074F3320C2F1B700C4A14C /* QHPushAnimationTransition.swift */,
+				8C074F3A20C2F1B800C4A14C /* QHTabBarController.swift */,
+				8C074F3120C2F1B700C4A14C /* QHTabBarView.swift */,
+				8C074F5220C4064A00C4A14C /* houlai-Bridging-Header.h */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8C074F4B20C4005E00C4A14C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C074F6320C42CB200C4A14C /* comment.png */,
+				8C074F5F20C4128900C4A14C /* red.png */,
+				8C074F6020C4128900C4A14C /* white.png */,
+				8C074F5D20C410A100C4A14C /* back.jpg */,
+				8C074F5A20C40B0400C4A14C /* yp_video_like@2x.png */,
+				8C074F5920C40B0400C4A14C /* yp_video_like@3x.png */,
+				8C074F4D20C4008000C4A14C /* april.jpeg */,
+				8C074F4C20C4008000C4A14C /* fireworks.jpeg */,
+				8C074F4E20C4008000C4A14C /* heart.png */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C074F6520C4318400C4A14C /* DropMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8C074F6B20C4320C00C4A14C /* MYColorBackView.h */,
+				8C074F6620C4320C00C4A14C /* MYColorBackView.m */,
+				8C074F6720C4320C00C4A14C /* MYPresentAnimationManager.h */,
+				8C074F6920C4320C00C4A14C /* MYPresentAnimationManager.m */,
+				8C074F6A20C4320C00C4A14C /* MYPresentationController.h */,
+				8C074F6D20C4320C00C4A14C /* MYPresentationController.m */,
+				8C074F6C20C4320C00C4A14C /* MYPresentedController.h */,
+				8C074F6820C4320C00C4A14C /* MYPresentedController.m */,
+			);
+			path = DropMenu;
+			sourceTree = "<group>";
+		};
+		8C0E653320A17AB300343FE8 = {
+			isa = PBXGroup;
+			children = (
+				8C0E653E20A17AB300343FE8 /* houlai */,
+				8C0E653D20A17AB300343FE8 /* Products */,
+				52FB41D0E1C5CE6D1181417B /* Pods */,
+				722D0A965135678E9B24C28A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8C0E653D20A17AB300343FE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C0E653C20A17AB300343FE8 /* houlai.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C0E653E20A17AB300343FE8 /* houlai */ = {
+			isa = PBXGroup;
+			children = (
+				8C074F4B20C4005E00C4A14C /* Supporting Files */,
+				8C074F3020C2F15100C4A14C /* Modules */,
+				8CED4F0920C2722C00E4DDA8 /* Base */,
+				8CED4F0820C2291F00E4DDA8 /* List */,
+				8C0E655120A17E0100343FE8 /* Main */,
+				8C0E653F20A17AB300343FE8 /* AppDelegate.swift */,
+				8C074F2E20C293F300C4A14C /* HLRootViewController.swift */,
+				8C0E654120A17AB400343FE8 /* ViewController.swift */,
+				8C0E654320A17AB400343FE8 /* Main.storyboard */,
+				8C0E654620A17AB500343FE8 /* Assets.xcassets */,
+				8C0E654820A17AB500343FE8 /* LaunchScreen.storyboard */,
+				8C0E654B20A17AB500343FE8 /* Info.plist */,
+			);
+			path = houlai;
+			sourceTree = "<group>";
+		};
+		8C0E655120A17E0100343FE8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8C0E655220A17E3800343FE8 /* MainViewController.swift */,
+				8C074F7420C437EE00C4A14C /* MenuViewController.swift */,
+				8C074F7520C437EE00C4A14C /* MenuViewController.xib */,
+				8C074F7820C43D4000C4A14C /* CommentTableViewCell.swift */,
+				8C074F7920C43D4000C4A14C /* CommentTableViewCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8CED4F0820C2291F00E4DDA8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8C074F2C20C28BD100C4A14C /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		8CED4F0920C2722C00E4DDA8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C0E653B20A17AB300343FE8 /* houlai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0E654E20A17AB500343FE8 /* Build configuration list for PBXNativeTarget "houlai" */;
+			buildPhases = (
+				4C938B66122CFC50D3C8C1A4 /* [CP] Check Pods Manifest.lock */,
+				8C0E653820A17AB300343FE8 /* Sources */,
+				8C0E653920A17AB300343FE8 /* Frameworks */,
+				8C0E653A20A17AB300343FE8 /* Resources */,
+				962816AB396BDD881D0B205A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = houlai;
+			productName = houlai;
+			productReference = 8C0E653C20A17AB300343FE8 /* houlai.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C0E653420A17AB300343FE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Ricardo;
+				TargetAttributes = {
+					8C0E653B20A17AB300343FE8 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0940;
+					};
+				};
+			};
+			buildConfigurationList = 8C0E653720A17AB300343FE8 /* Build configuration list for PBXProject "houlai" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C0E653320A17AB300343FE8;
+			productRefGroup = 8C0E653D20A17AB300343FE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C0E653B20A17AB300343FE8 /* houlai */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C0E653A20A17AB300343FE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0E654A20A17AB500343FE8 /* LaunchScreen.storyboard in Resources */,
+				8C074F4F20C4008000C4A14C /* fireworks.jpeg in Resources */,
+				8C074F5020C4008000C4A14C /* april.jpeg in Resources */,
+				8C0E654720A17AB500343FE8 /* Assets.xcassets in Resources */,
+				8C074F7B20C43D4000C4A14C /* CommentTableViewCell.xib in Resources */,
+				8C074F5120C4008000C4A14C /* heart.png in Resources */,
+				8C074F7720C437EE00C4A14C /* MenuViewController.xib in Resources */,
+				8C074F6220C4128900C4A14C /* white.png in Resources */,
+				8C074F5C20C40B0400C4A14C /* yp_video_like@2x.png in Resources */,
+				8C074F5E20C410A100C4A14C /* back.jpg in Resources */,
+				8C074F5B20C40B0400C4A14C /* yp_video_like@3x.png in Resources */,
+				8C074F6120C4128900C4A14C /* red.png in Resources */,
+				8C074F4420C2F1B800C4A14C /* QHNavigationBar.xib in Resources */,
+				8C074F6420C42CB200C4A14C /* comment.png in Resources */,
+				8C0E654520A17AB400343FE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C938B66122CFC50D3C8C1A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-houlai-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		962816AB396BDD881D0B205A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-houlai/Pods-houlai-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-houlai/Pods-houlai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C0E653820A17AB300343FE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C074F5520C4064B00C4A14C /* YPDouYinLikeAnimation.m in Sources */,
+				8C0E655320A17E3800343FE8 /* MainViewController.swift in Sources */,
+				8C074F4120C2F1B800C4A14C /* QHPresentPushTransition.swift in Sources */,
+				8C074F7020C4320C00C4A14C /* MYPresentAnimationManager.m in Sources */,
+				8C0E654220A17AB400343FE8 /* ViewController.swift in Sources */,
+				8C074F7120C4320C00C4A14C /* MYPresentationController.m in Sources */,
+				8C074F7620C437EE00C4A14C /* MenuViewController.swift in Sources */,
+				8C074F2F20C293F300C4A14C /* HLRootViewController.swift in Sources */,
+				8C074F3D20C2F1B800C4A14C /* QHPresentPopTransition.swift in Sources */,
+				8C074F6E20C4320C00C4A14C /* MYColorBackView.m in Sources */,
+				8C0E654020A17AB300343FE8 /* AppDelegate.swift in Sources */,
+				8C074F2D20C28BD100C4A14C /* ListViewController.swift in Sources */,
+				8C074F4520C2F1B800C4A14C /* QHTabBarController.swift in Sources */,
+				8C074F6F20C4320C00C4A14C /* MYPresentedController.m in Sources */,
+				8C074F4020C2F1B800C4A14C /* QHNavigationControllerTransition.swift in Sources */,
+				8C074F4320C2F1B800C4A14C /* QHBaseTransition.swift in Sources */,
+				8C074F3E20C2F1B800C4A14C /* QHPushAnimationTransition.swift in Sources */,
+				8C074F3C20C2F1B800C4A14C /* QHTabBarView.swift in Sources */,
+				8C074F4220C2F1B800C4A14C /* QHNavigationOtherTransition.swift in Sources */,
+				8C074F7A20C43D4000C4A14C /* CommentTableViewCell.swift in Sources */,
+				8C074F3F20C2F1B800C4A14C /* QHNavigationController.swift in Sources */,
+				8C074F4620C2F1B800C4A14C /* QHNavigationBar.swift in Sources */,
+				8C074F4A20C3FE6F00C4A14C /* TimelineView.swift in Sources */,
+				8CED4F0B20C2725E00E4DDA8 /* HLBaseViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C0E654320A17AB400343FE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0E654420A17AB400343FE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C0E654820A17AB500343FE8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0E654920A17AB500343FE8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C0E654C20A17AB500343FE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C0E654D20A17AB500343FE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C0E654F20A17AB500343FE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE514372DF284D37E34DBEED /* Pods-houlai.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 563L8XQYD8;
+				INFOPLIST_FILE = houlai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ricardo.com.houlai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "houlai/Modules/houlai-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		8C0E655020A17AB500343FE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF621688C23BFE64572417C9 /* Pods-houlai.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 563L8XQYD8;
+				INFOPLIST_FILE = houlai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ricardo.com.houlai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "houlai/Modules/houlai-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C0E653720A17AB300343FE8 /* Build configuration list for PBXProject "houlai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0E654C20A17AB500343FE8 /* Debug */,
+				8C0E654D20A17AB500343FE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C0E654E20A17AB500343FE8 /* Build configuration list for PBXNativeTarget "houlai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0E654F20A17AB500343FE8 /* Debug */,
+				8C0E655020A17AB500343FE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C0E653420A17AB300343FE8 /* Project object */;
+}
