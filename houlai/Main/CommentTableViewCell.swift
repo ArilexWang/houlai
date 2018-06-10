@@ -10,6 +10,12 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var commentText: UILabel!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userAvatar: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

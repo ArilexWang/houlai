@@ -46,6 +46,9 @@
 		8C0E654720A17AB500343FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654620A17AB500343FE8 /* Assets.xcassets */; };
 		8C0E654A20A17AB500343FE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654820A17AB500343FE8 /* LaunchScreen.storyboard */; };
 		8C0E655320A17E3800343FE8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E655220A17E3800343FE8 /* MainViewController.swift */; };
+		8C33FEEF20CD046D0043A01A /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C33FEEE20CD046D0043A01A /* plus.png */; };
+		8C960C4520CA8905004546FB /* 1548309576.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C960C4420CA8905004546FB /* 1548309576.jpg */; };
+		8C960C4720CA9559004546FB /* HLBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C960C4620CA9559004546FB /* HLBaseTableView.swift */; };
 		8CED4F0B20C2725E00E4DDA8 /* HLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +100,9 @@
 		8C0E654920A17AB500343FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C0E654B20A17AB500343FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0E655220A17E3800343FE8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8C33FEEE20CD046D0043A01A /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		8C960C4420CA8905004546FB /* 1548309576.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1548309576.jpg; sourceTree = "<group>"; };
+		8C960C4620CA9559004546FB /* HLBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseTableView.swift; sourceTree = "<group>"; };
 		8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseViewController.swift; sourceTree = "<group>"; };
 		BF621688C23BFE64572417C9 /* Pods-houlai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houlai.release.xcconfig"; path = "Pods/Target Support Files/Pods-houlai/Pods-houlai.release.xcconfig"; sourceTree = "<group>"; };
 		CE514372DF284D37E34DBEED /* Pods-houlai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houlai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houlai/Pods-houlai.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 		8C074F4B20C4005E00C4A14C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C33FEEE20CD046D0043A01A /* plus.png */,
+				8C960C4420CA8905004546FB /* 1548309576.jpg */,
 				8C074F6320C42CB200C4A14C /* comment.png */,
 				8C074F5F20C4128900C4A14C /* red.png */,
 				8C074F6020C4128900C4A14C /* white.png */,
@@ -246,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */,
+				8C960C4620CA9559004546FB /* HLBaseTableView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0E654A20A17AB500343FE8 /* LaunchScreen.storyboard in Resources */,
+				8C33FEEF20CD046D0043A01A /* plus.png in Resources */,
 				8C074F4F20C4008000C4A14C /* fireworks.jpeg in Resources */,
 				8C074F5020C4008000C4A14C /* april.jpeg in Resources */,
 				8C0E654720A17AB500343FE8 /* Assets.xcassets in Resources */,
@@ -324,6 +334,7 @@
 				8C074F5B20C40B0400C4A14C /* yp_video_like@3x.png in Resources */,
 				8C074F6120C4128900C4A14C /* red.png in Resources */,
 				8C074F4420C2F1B800C4A14C /* QHNavigationBar.xib in Resources */,
+				8C960C4520CA8905004546FB /* 1548309576.jpg in Resources */,
 				8C074F6420C42CB200C4A14C /* comment.png in Resources */,
 				8C0E654520A17AB400343FE8 /* Main.storyboard in Resources */,
 			);
@@ -398,6 +409,7 @@
 				8C074F4220C2F1B800C4A14C /* QHNavigationOtherTransition.swift in Sources */,
 				8C074F7A20C43D4000C4A14C /* CommentTableViewCell.swift in Sources */,
 				8C074F3F20C2F1B800C4A14C /* QHNavigationController.swift in Sources */,
+				8C960C4720CA9559004546FB /* HLBaseTableView.swift in Sources */,
 				8C074F4620C2F1B800C4A14C /* QHNavigationBar.swift in Sources */,
 				8C074F4A20C3FE6F00C4A14C /* TimelineView.swift in Sources */,
 				8CED4F0B20C2725E00E4DDA8 /* HLBaseViewController.swift in Sources */,

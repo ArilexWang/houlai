@@ -294,7 +294,7 @@ open class TimelineView: UIView {
 			
 			let backgroundViewForImage = UIView()
 			backgroundViewForImage.translatesAutoresizingMaskIntoConstraints = false
-			backgroundViewForImage.backgroundColor = UIColor.black
+			backgroundViewForImage.backgroundColor = UIColor.clear
 			backgroundViewForImage.layer.cornerRadius = 10
 			v.addSubview(backgroundViewForImage)
 			v.addConstraints([
@@ -308,19 +308,18 @@ open class TimelineView: UIView {
 			} else {
 				v.addConstraint(NSLayoutConstraint(item: backgroundViewForImage, attribute: .left, relatedBy: .equal, toItem: v, attribute: .left, multiplier: 1.0, constant: 40))
 			}
-			
 			let imageView = UIImageView(image: image)
 			imageView.layer.cornerRadius = 10
 			imageView.translatesAutoresizingMaskIntoConstraints = false
 			imageView.contentMode = UIViewContentMode.scaleAspectFit
 			v.addSubview(imageView)
 			imageView.tag = imageTag
-			v.addConstraints([
-				NSLayoutConstraint(item: imageView, attribute: .left, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .left, multiplier: 1.0, constant: 0),
-				NSLayoutConstraint(item: imageView, attribute: .right, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .right, multiplier: 1.0, constant: 0),
-				NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .top, multiplier: 1.0, constant: 0),
-				NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .bottom, multiplier: 1.0, constant: 0)
-				])
+            v.addConstraints([
+                NSLayoutConstraint(item: imageView, attribute: .left, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .left, multiplier: 1.0, constant: 0),
+                NSLayoutConstraint(item: imageView, attribute: .right, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .right, multiplier: 1.0, constant: 0),
+                NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .top, multiplier: 1.0, constant: 0),
+                NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: backgroundViewForImage, attribute: .bottom, multiplier: 1.0, constant: 0)
+                ])
 			
 			let button = UIButton(type: .custom)
 			button.translatesAutoresizingMaskIntoConstraints = false

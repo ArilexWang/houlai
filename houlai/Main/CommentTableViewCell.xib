@@ -6,20 +6,61 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Comment Cell" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="houlai" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Comment Cell" rowHeight="76" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="houlai" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="76"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="439" height="75.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ye1-ZM-ymC">
+                        <rect key="frame" x="20" y="11" width="40" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="J74-84-0U0"/>
+                            <constraint firstAttribute="width" constant="40" id="WUx-jA-gQa"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkI-YC-bpa">
+                        <rect key="frame" x="80" y="11" width="64" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-6H-5eH">
+                        <rect key="frame" x="80" y="35" width="339" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="ctR-6H-5eH" secondAttribute="bottom" constant="8.5" id="8H0-hk-bNC"/>
+                    <constraint firstItem="ctR-6H-5eH" firstAttribute="top" secondItem="PkI-YC-bpa" secondAttribute="bottom" constant="8" id="Bdt-Tz-BI9"/>
+                    <constraint firstItem="PkI-YC-bpa" firstAttribute="leading" secondItem="Ye1-ZM-ymC" secondAttribute="trailing" constant="20" id="HgJ-N2-Vfc"/>
+                    <constraint firstItem="ctR-6H-5eH" firstAttribute="leading" secondItem="Ye1-ZM-ymC" secondAttribute="trailing" constant="20" id="W6l-ce-4FC"/>
+                    <constraint firstItem="ctR-6H-5eH" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bdq-9G-oWj"/>
+                    <constraint firstItem="PkI-YC-bpa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ckb-OE-eTG"/>
+                    <constraint firstItem="Ye1-ZM-ymC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fhr-6g-eDB"/>
+                    <constraint firstItem="Ye1-ZM-ymC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="fzl-oq-uu8"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentText" destination="ctR-6H-5eH" id="B5s-5U-fMJ"/>
+                <outlet property="userAvatar" destination="Ye1-ZM-ymC" id="B7c-wX-PtR"/>
+                <outlet property="userName" destination="PkI-YC-bpa" id="5SQ-hQ-Y0u"/>
+            </connections>
+            <point key="canvasLocation" x="84.5" y="53"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="heart.png" width="225" height="225"/>
+    </resources>
 </document>

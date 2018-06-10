@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="houlai" customModuleProvider="target">
             <connections>
+                <outlet property="commentTextField" destination="X34-fc-Lki" id="mo7-gI-hIL"/>
                 <outlet property="tableView" destination="bm3-a4-g4w" id="Fea-ib-Hx0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,19 +22,42 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-a4-g4w">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-a4-g4w">
                     <rect key="frame" x="0.0" y="26" width="375" height="641"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6uJ-Hl-6oa"/>
                         <outlet property="delegate" destination="-1" id="wg1-Pv-Ncd"/>
                     </connections>
                 </tableView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X34-fc-Lki" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="qug-N4-2Px"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="what you want to comment..."/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="MWZ-ph-N9v"/>
+                    </connections>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bm3-a4-g4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5D9-Kf-kjz"/>
+                <constraint firstItem="X34-fc-Lki" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Buw-d0-nGN"/>
+                <constraint firstItem="bm3-a4-g4w" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Pre-yg-NP9"/>
+                <constraint firstItem="X34-fc-Lki" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Unn-pd-eq2"/>
+                <constraint firstItem="X34-fc-Lki" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ypz-sB-xVa"/>
+                <constraint firstItem="bm3-a4-g4w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="h3d-sw-2Jn"/>
+                <constraint firstItem="bm3-a4-g4w" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="juV-0t-3v6"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="17" y="46"/>
         </view>
     </objects>
 </document>

@@ -9,7 +9,10 @@
 
 import UIKit
 
-class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewDelegate {
+let MENU_HEIGHT:CGFloat = 420
+
+
+class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     @IBOutlet weak var dayLabel: UILabel! {
         didSet {
@@ -22,37 +25,36 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
             dayLabel.layer.cornerRadius = 10
         }
     }
- 
-    @IBOutlet weak var markBtn: UIButton!{
-        didSet {
-            
-        }
-    }
+    
     
     @IBOutlet weak var markTextField: UITextView!
     
-    
-    
+    @IBOutlet weak var imageView: UIImageView!
+ 
+    @IBOutlet weak var markBtn: UIButton!{
+        didSet {
+        }
+    }
+
     @IBAction func markBtnClick(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
             markTextField.isHidden = true
+            imageView.isHidden = true
         } else{
             sender.isSelected = true
             markTextField.isHidden = false
+            imageView.isHidden = false
         }
     }
     
+    
+    
     @IBAction func commentBtnClick(_ sender: UIButton) {
-        
-
-        
-        let menu = MenuViewController.init(showFrame: CGRect(x: 0, y: UIScreen.main.bounds.size.height-320, width: UIScreen.main.bounds.size.width, height: 320), showStyle: MYPresentedViewShowStyle.fromBottomDropStyle, callback: ({_ in
+        let menu = MenuViewController.init(showFrame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - MENU_HEIGHT, width: UIScreen.main.bounds.size.width, height: MENU_HEIGHT), showStyle: MYPresentedViewShowStyle.fromBottomDropStyle, callback: ({_ in
             }))
         
         self.present(menu!, animated: true, completion: nil)
-        
-        
     }
     
     
@@ -68,14 +70,17 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
         markTextField.isHidden = true
         markTextField.delegate = self
         
+        imageView.isHidden = true
         
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTapAction))
+        let imageLongTap = UILongPressGestureRecognizer(target: self, action: #selector(imageLongTapAction))
+        imageView.addGestureRecognizer(imageTap)
+        imageView.addGestureRecognizer(imageLongTap)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         //设置手势点击数,双击：点2下
         tapGesture.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(tapGesture)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,6 +94,28 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
         
         self.markBtn.isSelected = true
         self.markTextField.isHidden = false
+        self.imageView.isHidden = false
+    }
+    
+    @objc func imageTapAction(tap: UITapGestureRecognizer){
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = .photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true)
+    }
+    
+    @objc func imageLongTapAction(tap: UITapGestureRecognizer){
+        self.imageView.image = UIImage(named: "plus.png")
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+        } else {
+            
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -108,15 +135,5 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
         self.view.frame = CGRect(x:0,y:0, width:self.view.frame.size.width, height: self.view.frame.size.height)
         print("end edit")
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

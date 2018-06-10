@@ -12,7 +12,6 @@ import ESPullToRefresh
 
 class ListViewController: HLBaseViewController {
     
-    
     var scrollView: UIScrollView!
     
     var timeline:   TimelineView!
@@ -36,14 +35,13 @@ class ListViewController: HLBaseViewController {
             TimeFrame(text: "The month of love!", date: "February 14", image: UIImage(named: "heart.png")),
             TimeFrame(text: "Comes like a lion, leaves like a lamb", date: "March",  image: nil),
             TimeFrame(text: "Dumb stupid pranks.", date: "April 1", image: UIImage(named: "april.jpeg")),
-            TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: nil),
+            TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: UIImage(named: "1548309576.jpg")),
             TimeFrame(text: "This control can stretch. It doesn't matter how long or short the text is, or how many times you wiggle your nose and make a wish. The control always fits the content, and even extends a while at the end so the scroll view it is put into, even when pulled pretty far down, does not show the end of the scroll view.", date: "Long text", image: nil),
             TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
             ])
         scrollView.addSubview(timeline)
         
         
-        scrollView.addSubview(timeline)
         scrollView.addConstraints([
             NSLayoutConstraint(item: timeline, attribute: .left, relatedBy: .equal, toItem: scrollView, attribute: .left, multiplier: 1.0, constant: 0),
             NSLayoutConstraint(item: timeline, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: scrollView, attribute: .bottom, multiplier: 1.0, constant: 0),
@@ -59,8 +57,6 @@ class ListViewController: HLBaseViewController {
             self.scrollView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
         
-        
-        
         view.sendSubview(toBack: scrollView)
         
     }
@@ -72,19 +68,5 @@ class ListViewController: HLBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
