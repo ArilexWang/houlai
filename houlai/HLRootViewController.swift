@@ -31,10 +31,8 @@ class HLRootViewController: HLBaseViewController,QHNavigationControllerProtocol 
     }
     
     func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool {
-        
         //条件1
         var bScrollBegin =  true
-        
         //条件2
         if bScrollBegin == true {
             if mainScrollV.contentOffset.x == mainScrollV.frame.size.width {

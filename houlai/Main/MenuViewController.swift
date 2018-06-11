@@ -26,13 +26,11 @@ class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewD
     
     var tableData: [String] = [
         "abc",
-        "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
-        "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
-        "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
-        "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga"
+    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
+    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
+    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
+    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga"
     ]
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,18 +76,13 @@ class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewD
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n"){ //判断输入的字是否是回车，即按下return
-
             commentTextField.resignFirstResponder()
-        
             UITextView.animate(withDuration: 0.1, animations: {
                 self.commentTextField.frame = CGRect(x: self.commentTextField.frame.origin.x, y: self.view.frame.height - self.commentTextField.frame.size.height , width: self.commentTextField.frame.size.width, height: self.commentTextField.frame.size.height)
             })
-            
             return false; //这里返回NO，就代表return键值失效，即页面上按下return，不会出现换行，如果为yes，则输入页面会换行
         }
-        
         return true;
-        
     }
 
     

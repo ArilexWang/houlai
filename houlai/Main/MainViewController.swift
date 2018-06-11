@@ -17,14 +17,18 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
     @IBOutlet weak var dayLabel: UILabel! {
         didSet {
             let today = Date()
+            
             let userCalendar = Calendar.current
             let dateCom = userCalendar.dateComponents([.year, .month,.day,.hour], from: today)
+            
             dayLabel.text = String(dateCom.day!)
             dayLabel.layer.borderWidth = 10
             dayLabel.layer.borderColor = #colorLiteral(red: 0.6941176471, green: 0.1176470588, blue: 0.1019607843, alpha: 1)
             dayLabel.layer.cornerRadius = 10
         }
     }
+    
+    
     
     
     @IBOutlet weak var markTextField: UITextView!
@@ -47,8 +51,6 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
             imageView.isHidden = false
         }
     }
-    
-    
     
     @IBAction func commentBtnClick(_ sender: UIButton) {
         let menu = MenuViewController.init(showFrame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - MENU_HEIGHT, width: UIScreen.main.bounds.size.width, height: MENU_HEIGHT), showStyle: MYPresentedViewShowStyle.fromBottomDropStyle, callback: ({_ in
@@ -133,7 +135,6 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
     
     func textViewDidEndEditing(_ textView: UITextView) {
         self.view.frame = CGRect(x:0,y:0, width:self.view.frame.size.width, height: self.view.frame.size.height)
-        print("end edit")
     }
 
 }
