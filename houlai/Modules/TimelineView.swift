@@ -16,15 +16,18 @@ public struct TimeFrame{
 	/**
 		A description of the event.
 	*/
-	let text: String
+	var text: String
 	/**
 		The date that the event occured.
 	*/
-	let date: String
+	var date: String
 	/**
 		An optional image to show with the text and the date in the timeline.
 	*/
-	let image: UIImage?
+	var image: UIImage?
+    
+    
+    var created: Date
 }
 
 /**
@@ -294,7 +297,7 @@ open class TimelineView: UIView {
 			
 			let backgroundViewForImage = UIView()
 			backgroundViewForImage.translatesAutoresizingMaskIntoConstraints = false
-			backgroundViewForImage.backgroundColor = UIColor.clear
+			backgroundViewForImage.backgroundColor = UIColor.black
 			backgroundViewForImage.layer.cornerRadius = 10
 			v.addSubview(backgroundViewForImage)
 			v.addConstraints([

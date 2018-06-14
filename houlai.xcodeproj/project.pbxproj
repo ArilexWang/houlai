@@ -52,6 +52,8 @@
 		8C960C4520CA8905004546FB /* 1548309576.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C960C4420CA8905004546FB /* 1548309576.jpg */; };
 		8C960C4720CA9559004546FB /* HLBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C960C4620CA9559004546FB /* HLBaseTableView.swift */; };
 		8CED4F0B20C2725E00E4DDA8 /* HLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */; };
+		8CF6BFDF20D2179700C31578 /* TimeFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF6BFDE20D2179700C31578 /* TimeFrameViewController.swift */; };
+		8CF6BFE120D2585D00C31578 /* TimeFrameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF6BFE020D2585D00C31578 /* TimeFrameTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		8C960C4420CA8905004546FB /* 1548309576.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1548309576.jpg; sourceTree = "<group>"; };
 		8C960C4620CA9559004546FB /* HLBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseTableView.swift; sourceTree = "<group>"; };
 		8CED4F0A20C2725E00E4DDA8 /* HLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseViewController.swift; sourceTree = "<group>"; };
+		8CF6BFDE20D2179700C31578 /* TimeFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrameViewController.swift; sourceTree = "<group>"; };
+		8CF6BFE020D2585D00C31578 /* TimeFrameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrameTableViewCell.swift; sourceTree = "<group>"; };
 		BF621688C23BFE64572417C9 /* Pods-houlai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houlai.release.xcconfig"; path = "Pods/Target Support Files/Pods-houlai/Pods-houlai.release.xcconfig"; sourceTree = "<group>"; };
 		CE514372DF284D37E34DBEED /* Pods-houlai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houlai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houlai/Pods-houlai.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				8C074F2C20C28BD100C4A14C /* ListViewController.swift */,
+				8CF6BFDE20D2179700C31578 /* TimeFrameViewController.swift */,
+				8CF6BFE020D2585D00C31578 /* TimeFrameTableViewCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -403,6 +409,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C074F5520C4064B00C4A14C /* YPDouYinLikeAnimation.m in Sources */,
+				8CF6BFDF20D2179700C31578 /* TimeFrameViewController.swift in Sources */,
+				8CF6BFE120D2585D00C31578 /* TimeFrameTableViewCell.swift in Sources */,
 				8C0E655320A17E3800343FE8 /* MainViewController.swift in Sources */,
 				8C074F4120C2F1B800C4A14C /* QHPresentPushTransition.swift in Sources */,
 				8C074F7020C4320C00C4A14C /* MYPresentAnimationManager.m in Sources */,

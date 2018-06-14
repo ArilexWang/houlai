@@ -8,13 +8,17 @@
 
 import UIKit
 import ESPullToRefresh
-
+import CoreData
 
 class ListViewController: HLBaseViewController {
     
     var scrollView: UIScrollView!
     
-    var timeline:   TimelineView!
+    var timeline: TimelineView!
+    
+    var timeFrames: [TimeFrame] = []
+    
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +26,6 @@ class ListViewController: HLBaseViewController {
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
-        
         view.addConstraints([
             NSLayoutConstraint(item: scrollView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0),
             NSLayoutConstraint(item: scrollView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 29),
@@ -30,29 +33,14 @@ class ListViewController: HLBaseViewController {
             NSLayoutConstraint(item: scrollView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0)
             ])
         
-        timeline = TimelineView(bulletType: .circle, timeFrames: [
-            TimeFrame(text: "New Year's Day", date: "January 1", image: UIImage(named: "fireworks.jpeg")),
-            TimeFrame(text: "The month of love!", date: "February 14", image: UIImage(named: "heart.png")),
-            TimeFrame(text: "Comes like a lion, leaves like a lamb", date: "March",  image: nil),
-            TimeFrame(text: "Dumb stupid pranks.", date: "April 1", image: UIImage(named: "april.jpeg")),
-            TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: UIImage(named: "1548309576.jpg")),
-            TimeFrame(text: "This control can stretch. It doesn't matter how long or short the text is, or how many times you wiggle your nose and make a wish. The control always fits the content, and even extends a while at the end so the scroll view it is put into, even when pulled pretty far down, does not show the end of the scroll view.", date: "Long text", image: nil),
-            TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
-            ])
-        scrollView.addSubview(timeline)
+        
+        self.loadDatabase()
         
         
-        scrollView.addConstraints([
-            NSLayoutConstraint(item: timeline, attribute: .left, relatedBy: .equal, toItem: scrollView, attribute: .left, multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: timeline, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: scrollView, attribute: .bottom, multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: timeline, attribute: .top, relatedBy: .equal, toItem: scrollView, attribute: .top, multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: timeline, attribute: .right, relatedBy: .equal, toItem: scrollView, attribute: .right, multiplier: 1.0, constant: 0),
-            
-            NSLayoutConstraint(item: timeline, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1.0, constant: 0)
-            ])
-
         
         self.scrollView.es.addPullToRefresh {
+            //下拉刷新
+            self.loadDatabase()
             self.scrollView.es.stopPullToRefresh()
             self.scrollView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
@@ -60,7 +48,54 @@ class ListViewController: HLBaseViewController {
         view.sendSubview(toBack: scrollView)
         
     }
-
+    
+    //加载本地数据
+    private func loadDatabase(){
+        if let context = container?.viewContext {
+            context.perform {
+                self.timeFrames = []
+                if Thread.isMainThread {
+                    print("on main thread")
+                } else {
+                    print("off main thread")
+                }
+//                if let timeFrameArr = (try? context.fetch(TimeFrameModel.fetchRequest())) as? [TimeFrameModel] {
+//                    for timeFrame in timeFrameArr{
+//                        let newTimeFrame = TimeFrame(text: timeFrame.text ?? "", date: timeFrame.date ?? "", image: timeFrame.image as? UIImage)
+//                        self.timeFrames.append(newTimeFrame)
+//                    }
+//                }
+//                self.timeline = TimelineView(bulletType: .circle, timeFrames: self.timeFrames)
+//                self.scrollView.addSubview(self.timeline)
+//                self.scrollView.addConstraints([
+//                    NSLayoutConstraint(item: self.timeline, attribute: .left, relatedBy: .equal, toItem: self.scrollView, attribute: .left, multiplier: 1.0, constant: 0),
+//                    NSLayoutConstraint(item: self.timeline, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: self.scrollView, attribute: .bottom, multiplier: 1.0, constant: 0),
+//                    NSLayoutConstraint(item: self.timeline, attribute: .top, relatedBy: .equal, toItem: self.scrollView, attribute: .top, multiplier: 1.0, constant: 0),
+//                    NSLayoutConstraint(item: self.timeline, attribute: .right, relatedBy: .equal, toItem: self.scrollView, attribute: .right, multiplier: 1.0, constant: 0),
+//
+//                    NSLayoutConstraint(item: self.timeline, attribute: .width, relatedBy: .equal, toItem: self.scrollView, attribute: .width, multiplier: 1.0, constant: 0)
+//                    ])
+//                let offset = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
+//                self.scrollView.setContentOffset(offset, animated: false)
+            
+            }
+        }
+    }
+    
+    private func printDatabaseStatistics(){
+        if let context = container?.viewContext {
+            context.perform {
+                if Thread.isMainThread {
+                    print("on main thread")
+                } else {
+                    print("off main thread")
+                }
+                if let timeFrameCount = (try? context.fetch(TimeFrameModel.fetchRequest()))?.count {
+                    print("\(timeFrameCount) timeFrames")
+                }
+            }
+        }
+    }
     
     
     
