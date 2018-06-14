@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		28C75737CBE736AE50778D76 /* Pods_houlai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F19B42CE81C62F2D7F3002A /* Pods_houlai.framework */; };
-		8C074F2D20C28BD100C4A14C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F2C20C28BD100C4A14C /* ListViewController.swift */; };
 		8C074F2F20C293F300C4A14C /* HLRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F2E20C293F300C4A14C /* HLRootViewController.swift */; };
 		8C074F3C20C2F1B800C4A14C /* QHTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3120C2F1B700C4A14C /* QHTabBarView.swift */; };
 		8C074F3D20C2F1B800C4A14C /* QHPresentPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F3220C2F1B700C4A14C /* QHPresentPopTransition.swift */; };
@@ -41,7 +40,6 @@
 		8C074F7A20C43D4000C4A14C /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C074F7820C43D4000C4A14C /* CommentTableViewCell.swift */; };
 		8C074F7B20C43D4000C4A14C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C074F7920C43D4000C4A14C /* CommentTableViewCell.xib */; };
 		8C0E654020A17AB300343FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E653F20A17AB300343FE8 /* AppDelegate.swift */; };
-		8C0E654220A17AB400343FE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E654120A17AB400343FE8 /* ViewController.swift */; };
 		8C0E654520A17AB400343FE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654320A17AB400343FE8 /* Main.storyboard */; };
 		8C0E654720A17AB500343FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654620A17AB500343FE8 /* Assets.xcassets */; };
 		8C0E654A20A17AB500343FE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0E654820A17AB500343FE8 /* LaunchScreen.storyboard */; };
@@ -58,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		7F19B42CE81C62F2D7F3002A /* Pods_houlai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houlai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C074F2C20C28BD100C4A14C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8C074F2E20C293F300C4A14C /* HLRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLRootViewController.swift; sourceTree = "<group>"; };
 		8C074F3120C2F1B700C4A14C /* QHTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHTabBarView.swift; sourceTree = "<group>"; };
 		8C074F3220C2F1B700C4A14C /* QHPresentPopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QHPresentPopTransition.swift; sourceTree = "<group>"; };
@@ -98,7 +95,6 @@
 		8C074F7920C43D4000C4A14C /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		8C0E653C20A17AB300343FE8 /* houlai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houlai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0E653F20A17AB300343FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C0E654120A17AB400343FE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C0E654420A17AB400343FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C0E654620A17AB500343FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C0E654920A17AB500343FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -230,7 +226,6 @@
 				8C0E655120A17E0100343FE8 /* Main */,
 				8C0E653F20A17AB300343FE8 /* AppDelegate.swift */,
 				8C074F2E20C293F300C4A14C /* HLRootViewController.swift */,
-				8C0E654120A17AB400343FE8 /* ViewController.swift */,
 				8C0E654320A17AB400343FE8 /* Main.storyboard */,
 				8C0E654620A17AB500343FE8 /* Assets.xcassets */,
 				8C0E654820A17AB500343FE8 /* LaunchScreen.storyboard */,
@@ -263,7 +258,6 @@
 		8CED4F0820C2291F00E4DDA8 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				8C074F2C20C28BD100C4A14C /* ListViewController.swift */,
 				8CF6BFDE20D2179700C31578 /* TimeFrameViewController.swift */,
 				8CF6BFE020D2585D00C31578 /* TimeFrameTableViewCell.swift */,
 			);
@@ -414,14 +408,12 @@
 				8C0E655320A17E3800343FE8 /* MainViewController.swift in Sources */,
 				8C074F4120C2F1B800C4A14C /* QHPresentPushTransition.swift in Sources */,
 				8C074F7020C4320C00C4A14C /* MYPresentAnimationManager.m in Sources */,
-				8C0E654220A17AB400343FE8 /* ViewController.swift in Sources */,
 				8C074F7120C4320C00C4A14C /* MYPresentationController.m in Sources */,
 				8C074F7620C437EE00C4A14C /* MenuViewController.swift in Sources */,
 				8C074F2F20C293F300C4A14C /* HLRootViewController.swift in Sources */,
 				8C074F3D20C2F1B800C4A14C /* QHPresentPopTransition.swift in Sources */,
 				8C074F6E20C4320C00C4A14C /* MYColorBackView.m in Sources */,
 				8C0E654020A17AB300343FE8 /* AppDelegate.swift in Sources */,
-				8C074F2D20C28BD100C4A14C /* ListViewController.swift in Sources */,
 				8C074F4520C2F1B800C4A14C /* QHTabBarController.swift in Sources */,
 				8C074F6F20C4320C00C4A14C /* MYPresentedController.m in Sources */,
 				8C1BB2B120CEBCA00016B465 /* TimeFrame.xcdatamodeld in Sources */,
