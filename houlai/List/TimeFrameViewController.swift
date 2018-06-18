@@ -52,15 +52,9 @@ class TimeFrameViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     private func loadDatabase(){
-        
         if let context = container?.viewContext {
             context.perform {
                 self.timeFrames = []
-                if Thread.isMainThread {
-                    print("on main thread")
-                } else {
-                    print("off main thread")
-                }
                 if let timeFrameArr = (try? context.fetch(TimeFrameModel.fetchRequest())) as? [TimeFrameModel] {
                     for timeFrame in timeFrameArr{
                         var contentImage:UIImage? = nil
@@ -82,7 +76,7 @@ class TimeFrameViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeFrameCell", for: indexPath)
-        let timeFrame = timeFrames[indexPath.row]
+        let timeFrame = timeFrames.reversed()[indexPath.row]
         if let timeFrameCell = cell as? TimeFrameTableViewCell {
             timeFrameCell.timeFrame = timeFrame
         }

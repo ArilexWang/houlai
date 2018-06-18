@@ -130,7 +130,8 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
                             self.imageView.isHidden = false
                             self.markTextField.text = timeFrame.text
                             if let image = timeFrame.image as? UIImage {
-                                self.imageView.image = image
+                                let suqareImage = image.cropToSquare()
+                                self.imageView.image = suqareImage
                             }
                             self.timeFrame = TimeFrame(text: timeFrame.text ?? "", date: timeFrame.date ?? "", image: timeFrame.image as? UIImage, created: timeFrame.created!)
                         }
@@ -172,18 +173,13 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
     private func printDatabaseStatistics(){
         if let context = container?.viewContext {
             context.perform {
-                if Thread.isMainThread {
-                    print("on main thread")
-                } else {
-                    print("off main thread")
-                }
+               
                 if let timeFrameCount = (try? context.fetch(TimeFrameModel.fetchRequest()))?.count {
-                    print("\(timeFrameCount) timeFrames")
+                    
                 }
                 if let timeFrameArr = (try? context.fetch(TimeFrameModel.fetchRequest())) as? [TimeFrameModel]{
                     for timeFrame in timeFrameArr {
-                        print(timeFrame.date)
-                        print(timeFrame.text)
+                        
                     }
                 }
             }
@@ -209,7 +205,8 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
     //选择相片结束
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = image
+            let squareImage = image.cropToSquare()
+            imageView.image = squareImage
             timeFrame?.image = image
             updataDatabase(with: timeFrame!)
         } else {
@@ -221,7 +218,7 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
     //主页单击事件，收回键盘
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         markTextField.resignFirstResponder()
-        print(markTextField.text)
+        
         
     }
     
@@ -238,7 +235,7 @@ class MainViewController: HLBaseViewController,UIActionSheetDelegate,UITextViewD
     func textViewDidEndEditing(_ textView: UITextView) {
         self.view.frame = CGRect(x:0,y:0, width:self.view.frame.size.width, height: self.view.frame.size.height)
         timeFrame?.text = markTextField.text
-        print(markTextField.text)
+        
         updataDatabase(with: timeFrame!)
     }
 

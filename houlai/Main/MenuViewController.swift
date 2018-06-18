@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIActionSheetDelegate {
     
@@ -21,16 +21,29 @@ class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewD
         }
     }
     
+    
     var textFieldHeight: CGFloat?
     
-    
-    var tableData: [String] = [
-        "abc",
-    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
-    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
-    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga",
-    "adfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadgaadfadfecvadgaewcvacagadsgaewadacacacvadga"
+    var comment: NSMutableDictionary = [
+        "dayid": "",
+        "content": "",
+        "openid": "",
+        "created": ""
     ]
+    
+    var dateid: String? {
+        didSet{
+            comment.setValue(dateid, forKey: "dayid")
+        }
+    }
+    
+    var created: String?{
+        didSet{
+            comment.setValue(created, forKey: "created")
+        }
+    }
+    
+    var commentsData: [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +55,16 @@ class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewD
         tableView.rowHeight = UITableViewAutomaticDimension
         
         self.commentTextField.delegate = self
+        
+        
+        //获取今日日期id, 通过id获取今日评论
+        dateid = getTodayDateID()
+        loadTodayComment(with: dateid!)
+        created = getCurrentDateString()
+        
+        if let openid = UserDefaults.standard.value(forKey: "openid"){
+            comment.setValue(openid as! String, forKey: "openid")
+        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         //设置手势点击数
@@ -80,17 +103,46 @@ class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewD
             UITextView.animate(withDuration: 0.1, animations: {
                 self.commentTextField.frame = CGRect(x: self.commentTextField.frame.origin.x, y: self.view.frame.height - self.commentTextField.frame.size.height , width: self.commentTextField.frame.size.width, height: self.commentTextField.frame.size.height)
             })
+            if let content = self.commentTextField.text{
+                comment.setValue(content, forKey: "content")
+                self.createComment(with: comment)
+            }
             return false; //这里返回NO，就代表return键值失效，即页面上按下return，不会出现换行，如果为yes，则输入页面会换行
         }
         return true;
     }
-
     
+    //从服务器获取今日评论
+    func loadTodayComment(with dateid:String){
+        let para = ["dayid": dateid]
+        Alamofire.request(loadTodayCommentsUrl, method: .get, parameters: para).responseJSON{ response in
+            switch response.result {
+            case.success(let json):
+                self.commentsData = json as! [NSDictionary]
+                self.tableView.reloadData()
+            case.failure(_):
+                print("error")
+            }
+        }
+    }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //新增评论
+    func createComment(with comment:NSMutableDictionary){
+        
+        let para = ["openid": comment.value(forKey: "openid") as! String,
+                    "content": comment.value(forKey: "content")  as! String,
+                    "dayid": comment.value(forKey: "dayid")  as! String,
+                    "created": comment.value(forKey: "created")  as! String]
+        Alamofire.request(createCommentUrl, method: .post, parameters:para).responseJSON{ response in
+            switch response.result {
+            case.success(let json):
+                self.commentsData = json as! [NSDictionary]
+                self.tableView.reloadData()
+                self.commentTextField.text = ""
+            case.failure(_):
+                print("error")
+            }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -98,31 +150,22 @@ class MenuViewController: MYPresentedController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+        
+        return commentsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("CommentTableViewCell", owner: self, options: nil)?.first as! CommentTableViewCell
-    
-        cell.commentText.text = tableData[indexPath.row]
-        cell.commentText.numberOfLines = 0
         
+        let commentData = commentsData.reversed()[indexPath.row]
+        
+        cell.commentData = commentData
+
         return cell
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

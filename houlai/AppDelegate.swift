@@ -11,17 +11,17 @@ import CoreData
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
         if let navigationC = self.window?.rootViewController as? QHNavigationController {
             navigationC.addGesturePush()
         }
+        
+        WXApi.registerApp("wxf135ce909dd515d7")
         
         // Override point for customization after application launch.
         return true
@@ -94,6 +94,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    //  微信跳转回调
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        WXApi.handleOpen(url, delegate: self)
+        return true
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        let result = UMSocialManager.default().handleOpen(url)
+        let result = true
+        if result == false {
+            //调用其他SDK，例如支付宝SDK等
+            WXApi.handleOpen(url, delegate: self)
+        }
+        return result
+    }
+    //  微信回调
+    func onResp(_ resp: BaseResp!){
+        //  微信登录回调
+        if resp.errCode == 0 && resp.type == 0{//授权成功
+            let response = resp as! SendAuthResp
+            //  微信登录成功通知
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "WXLoginSuccessNotification"), object: response.code)
+            print(response.code)
+        }
+    }
+    
     
 }
 

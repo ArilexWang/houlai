@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -34,8 +33,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-6H-5eH">
-                        <rect key="frame" x="80" y="35" width="339" height="21.5"/>
+                        <rect key="frame" x="80" y="35" width="339" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY9-nv-As3">
+                        <rect key="frame" x="348" y="11" width="72" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="cKu-3q-xSa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -49,11 +57,15 @@
                     <constraint firstItem="PkI-YC-bpa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ckb-OE-eTG"/>
                     <constraint firstItem="Ye1-ZM-ymC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fhr-6g-eDB"/>
                     <constraint firstItem="Ye1-ZM-ymC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="fzl-oq-uu8"/>
+                    <constraint firstItem="FY9-nv-As3" firstAttribute="baseline" secondItem="PkI-YC-bpa" secondAttribute="baseline" id="pEd-Te-0Xk"/>
+                    <constraint firstItem="FY9-nv-As3" firstAttribute="centerY" secondItem="PkI-YC-bpa" secondAttribute="centerY" id="qaK-DR-ZTK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FY9-nv-As3" secondAttribute="trailing" constant="-1" id="wp6-Wi-r8F"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentText" destination="ctR-6H-5eH" id="B5s-5U-fMJ"/>
+                <outlet property="created" destination="FY9-nv-As3" id="E76-R4-dzH"/>
                 <outlet property="userAvatar" destination="Ye1-ZM-ymC" id="B7c-wX-PtR"/>
                 <outlet property="userName" destination="PkI-YC-bpa" id="5SQ-hQ-Y0u"/>
             </connections>

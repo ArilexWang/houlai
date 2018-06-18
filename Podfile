@@ -8,4 +8,5 @@ target 'houlai' do
   # Pods for houlai
   pod "ESPullToRefresh"
   pod 'KMPlaceholderTextView', '~> 1.3.0'
+  pod 'Alamofire', '~> 4.7'
 end

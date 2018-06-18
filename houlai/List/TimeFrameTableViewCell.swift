@@ -18,6 +18,9 @@ class TimeFrameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var contentImage: UIImageView!
     
+    @IBOutlet weak var avatarImage: UIImageView!
+    
+    
     var timeFrame: TimeFrame? {
         didSet {
             updateUI()
@@ -40,6 +43,13 @@ class TimeFrameTableViewCell: UITableViewCell {
         let daysBetween = (timeFrame?.created)?.daysBetweenDate(toDate: Date())
         
         beforeDay.text = "距今" + String(daysBetween!) + "天"
+        
+        avatarImage.layer.masksToBounds = true
+        avatarImage.layer.cornerRadius = avatarImage.bounds.size.width / 2
+        
+        if let imageUrl = UserDefaults.standard.value(forKey: "headimgurl") as? String {
+            avatarImage.imageFromURL(imageUrl, placeholder: UIImage(color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))!)
+        }
         
     }
 }
